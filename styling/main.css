@@ -156,6 +156,7 @@ body {
 }
 
 .typer .quote span.active {
+  box-shadow: inset 2px 0px var(--text-secondary);
   animation: blink 1s ease-in-out infinite;
 }
 
