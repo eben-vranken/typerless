@@ -17,8 +17,21 @@ const spinningElement = document.querySelector(".loader");
 quoteInput.addEventListener("select", function () {
     this.selectionStart = this.selectionEnd;
 }, false);
+// Don't allow any arrows/enter key
+quoteElement.addEventListener("keydown", function (e) {
+    const illegalCharacters = [
+        "ArrowDown",
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowRight",
+        "Enter",
+    ];
+    console.log(e.key);
+    if (illegalCharacters.includes(e.key))
+        e.preventDefault();
+});
 // Respond to person typing
-quoteInput.addEventListener("input", () => {
+quoteInput.addEventListener("input", (e) => {
     var _a;
     const lettersArray = quoteElement.querySelectorAll("span");
     const typedValue = quoteInput.value.split("");
@@ -69,6 +82,9 @@ function getRandomQuote() {
         // Turn every quote character into span element
         quote.split("").forEach((c) => {
             const spanElement = document.createElement("span");
+            if (c === " ") {
+                spanElement.classList.add("space");
+            }
             spanElement.innerText = c;
             quoteElement.appendChild(spanElement);
         });
