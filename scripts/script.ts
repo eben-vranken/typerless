@@ -12,8 +12,21 @@ quoteInput.addEventListener(
   false
 );
 
+// Don't allow any arrows/enter key
+quoteElement.addEventListener("keydown", function (e: KeyboardEvent) {
+  const illegalCharacters = [
+    "ArrowDown",
+    "ArrowUp",
+    "ArrowLeft",
+    "ArrowRight",
+    "Enter",
+  ];
+  console.log(e.key);
+  if (illegalCharacters.includes(e.key)) e.preventDefault();
+});
+
 // Respond to person typing
-quoteInput.addEventListener("input", () => {
+quoteInput.addEventListener("input", (e) => {
   const lettersArray: NodeListOf<HTMLSpanElement> =
     quoteElement.querySelectorAll("span");
   const typedValue: Array<string> = quoteInput.value.split("");
@@ -65,6 +78,9 @@ async function getRandomQuote() {
   // Turn every quote character into span element
   quote.split("").forEach((c: string) => {
     const spanElement: HTMLElement = document.createElement("span");
+    if (c === " ") {
+      spanElement.classList.add("space");
+    }
     spanElement.innerText = c;
     quoteElement.appendChild(spanElement);
   });
