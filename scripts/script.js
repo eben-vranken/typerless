@@ -12,6 +12,7 @@ const API_URL = "https://api.quotable.io/random";
 const navBtn = document.querySelector(".nav-btn");
 const quoteElement = document.querySelector(".quote");
 const quoteInput = document.querySelector(".quote-input");
+const spinningElement = document.querySelector(".loader");
 // Don't allow selection of the input
 quoteInput.addEventListener("select", function () {
     this.selectionStart = this.selectionEnd;
@@ -59,8 +60,12 @@ function getRandomQuote() {
         // Clear input
         quoteInput.value = "";
         quoteElement.textContent = "";
+        // Enable spinner
+        spinningElement.style.display = "block";
         // Get Quote
         const quote = yield apiCall();
+        // Disable loader
+        spinningElement.style.display = "none";
         // Turn every quote character into span element
         quote.split("").forEach((c) => {
             const spanElement = document.createElement("span");
