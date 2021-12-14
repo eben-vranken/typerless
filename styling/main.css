@@ -79,7 +79,7 @@ body {
 
 /* Hamburger button */
 .nav-btn {
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   background: none;
@@ -145,13 +145,14 @@ body {
 
 .typer .quote-input {
   width: 100%;
-  height: 100%;
+  height: 90%;
+  bottom: 0;
   cursor: default;
   background: none;
   border: none;
   position: absolute;
-  user-select: none;
   color: rgba(241, 236, 206, 0%);
+  outline: none;
 }
 
 .typer .quote span.active {
