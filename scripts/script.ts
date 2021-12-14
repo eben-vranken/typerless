@@ -1,4 +1,4 @@
-const API_URL = "http://api.quotable.io/random";
+const API_URL = "https://api.quotable.io/random";
 const navBtn: HTMLButtonElement = document.querySelector(".nav-btn");
 const quoteElement: HTMLElement = document.querySelector(".quote");
 const quoteInput: HTMLInputElement = document.querySelector(".quote-input");

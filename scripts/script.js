@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const API_URL = "http://api.quotable.io/random";
+const API_URL = "https://api.quotable.io/random";
 const navBtn = document.querySelector(".nav-btn");
 const quoteElement = document.querySelector(".quote");
 const quoteInput = document.querySelector(".quote-input");
@@ -44,12 +44,9 @@ quoteInput.addEventListener("input", () => {
             correct = false;
         }
     });
-    const index = typedValue.length;
+    (_a = quoteElement.children[typedValue.length]) === null || _a === void 0 ? void 0 : _a.classList.add("active");
     if (correct) {
         getRandomQuote();
-    }
-    else {
-        (_a = quoteElement.children[index]) === null || _a === void 0 ? void 0 : _a.classList.add("active");
     }
 });
 const apiCall = function () {
