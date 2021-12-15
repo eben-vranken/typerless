@@ -1,15 +1,16 @@
-# typer
+# breezy
 ----------------------------
 
-💻 Typer is a WebApplication written in TypeScript,
-where you can practice ⌨ your typing speed using randomly generated quotes and learn more
-about your typing behavior.
-----------------------------
+☀️Breezy is a WebApplication written in TypeScript,
 
-🌐 https://eben-vranken.github.io/typer/
+where you can see ☁️ local forecast information about any city in the world.
 
 ----------------------------
 
-⚡ Typer is powered by QuotableAPI - Check them out here: https://github.com/lukePeavey/quotable
+🌐 https://d15gu15e.github.io/breezy/
+
+----------------------------
+
+⚡ Breezy is powered by OpenWeatherMapAPI - Check them out here: https://openweathermap.org
 
 📝 Contact me on my linkedin: linkedin.com/in/eben-vranken-66b053224/
