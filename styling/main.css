@@ -182,10 +182,10 @@ body {
 
 .typer .statistics {
   display: grid;
+  column-gap: 3em;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   position: absolute;
-  width: 30%;
   bottom: 2.5%;
   text-align: center;
   color: var(--text-secondary);
@@ -256,5 +256,9 @@ body {
   }
   .typer .quote {
     max-width: 30ch;
+  }
+
+  .typer .statistics {
+    column-gap: 1em;
   }
 }
