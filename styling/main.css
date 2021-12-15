@@ -120,15 +120,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: left;
   height: 100%;
   min-width: 50%;
+  font-family: "Lato", sans-serif;
 }
 
 .typer .quote {
-  font-family: "Lato", sans-serif;
   text-align: center;
   max-width: 45ch;
-  font-size: 1.2rem;
+  font-size: 1.45rem;
+  white-space: pre-wrap;
 }
 
 .typer .quote span {
@@ -178,6 +180,25 @@ body {
   animation: spin 2s linear infinite;
 }
 
+.typer .statistics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  position: absolute;
+  width: 30%;
+  bottom: 2.5%;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.typer .statistics p {
+  font-size: 25px;
+}
+
+.typer .statistics span {
+  font-size: 18px;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -216,6 +237,7 @@ body {
     height: 100vh;
     text-align: center;
     position: absolute;
+    pointer-events: none;
     top: 50vh;
     right: 50%;
     transform: translate(50%, -50%);
@@ -230,6 +252,7 @@ body {
   .nav-items.open {
     opacity: 100%;
     z-index: 2;
+    pointer-events: visible;
   }
   .typer .quote {
     max-width: 30ch;

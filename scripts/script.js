@@ -13,23 +13,25 @@ const navBtn = document.querySelector(".nav-btn");
 const quoteElement = document.querySelector(".quote");
 const quoteInput = document.querySelector(".quote-input");
 const spinningElement = document.querySelector(".loader");
-// Don't allow selection of the input
-quoteInput.addEventListener("select", function () {
-    this.selectionStart = this.selectionEnd;
-}, false);
-// Don't allow any arrows/enter key
-quoteElement.addEventListener("keydown", function (e) {
-    const illegalCharacters = [
-        "ArrowDown",
-        "ArrowUp",
-        "ArrowLeft",
-        "ArrowRight",
-        "Enter",
-    ];
-    console.log(e.key);
-    if (illegalCharacters.includes(e.key))
-        e.preventDefault();
-});
+// Statistic Elements
+const timeElement = document.querySelector(".time");
+const wpmElement = document.querySelector(".wpm");
+const mistakesElement = document.querySelector(".mistakes");
+// Statistic Variables
+let statistics = [new Date(), 0];
+const updateStatistics = function () {
+    // Deconstruct statistics
+    const [time, mistakes] = statistics;
+    // Update time
+    const endTime = (new Date().getTime() - time.getTime()) / 1000;
+    timeElement.textContent = `${endTime.toFixed(1)}s`;
+    // Update wpm
+    const wordCount = quoteElement.textContent.split(" ").length;
+    const wpm = wordCount / (endTime / 60);
+    wpmElement.textContent = `${wpm.toFixed(2)}`;
+    // update mistakes
+    mistakesElement.textContent = String(Math.ceil(Math.sqrt(mistakes)));
+};
 // Respond to person typing
 quoteInput.addEventListener("input", (e) => {
     var _a;
@@ -49,24 +51,31 @@ quoteInput.addEventListener("input", (e) => {
             correct = false;
         }
         else if (char === charElement.innerText) {
+            // Correct
             charElement.classList.add("correct");
             charElement.classList.remove("incorrect");
         }
         else {
+            // Made a mistake
+            statistics[1]++;
             charElement.classList.remove("correct");
             charElement.classList.add("incorrect");
             correct = false;
         }
     });
+    // Add cursor
     (_a = quoteElement.children[typedValue.length]) === null || _a === void 0 ? void 0 : _a.classList.add("active");
+    // Finished
     if (correct) {
+        updateStatistics();
         getRandomQuote();
     }
 });
+// Get Random Quote
 const apiCall = function () {
     return fetch(API_URL)
         .then((res) => res.json())
-        .then((data) => data.content);
+        .then((data) => data);
 };
 function getRandomQuote() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -76,11 +85,13 @@ function getRandomQuote() {
         // Enable spinner
         spinningElement.style.display = "block";
         // Get Quote
-        const quote = yield apiCall();
+        const quoteData = yield apiCall();
+        // Reset statistics
+        statistics = [new Date(), 0];
         // Disable loader
         spinningElement.style.display = "none";
         // Turn every quote character into span element
-        quote.split("").forEach((c) => {
+        quoteData.content.split("").forEach((c) => {
             const spanElement = document.createElement("span");
             if (c === " ") {
                 spanElement.classList.add("space");
@@ -90,6 +101,23 @@ function getRandomQuote() {
         });
     });
 }
+// Don't allow selection of the input
+quoteInput.addEventListener("select", function () {
+    this.selectionStart = this.selectionEnd;
+}, false);
+// Don't allow any arrows/enter key
+quoteElement.addEventListener("keydown", function (e) {
+    const illegalCharacters = [
+        "ArrowDown",
+        "ArrowUp",
+        "ArrowLeft",
+        "ArrowRight",
+        "Enter",
+    ];
+    console.log(e.key);
+    if (illegalCharacters.includes(e.key))
+        e.preventDefault();
+});
 // Navbar open and closing
 navBtn.addEventListener("click", function () {
     const navItems = document.querySelector(".nav-items");
