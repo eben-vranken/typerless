@@ -116,7 +116,6 @@ quoteElement.addEventListener("keydown", function (e: KeyboardEvent) {
     "ArrowRight",
     "Enter",
   ];
-  console.log(e.key);
   if (illegalCharacters.includes(e.key)) e.preventDefault();
 });
 
