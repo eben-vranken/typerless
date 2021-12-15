@@ -1,7 +1,7 @@
 # typer
 ----------------------------
 
-☀️Typer is a WebApplication written in TypeScript,
+💻 Typer is a WebApplication written in TypeScript,
 where you can practice ⌨ your typing speed using randomly generated quotes and learn more
 about your typing behavior.
 ----------------------------
