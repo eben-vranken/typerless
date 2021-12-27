@@ -1,0 +1,53 @@
+.snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 60px;
+  padding-top: 3.5px;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 3px;
+  vertical-align: middle;
+  color: var(--text-main);
+
+  font-family: "Montserrat";
+
+  background-color: var(--text-secondary);
+  opacity: 40%;
+}
+
+.snackbar span:nth-child(-n + 3) {
+  font-family: "Lato", sans-serif;
+}
+
+#hidden {
+  visibility: hidden;
+}
+
+#show {
+  animation: slideIn 3s;
+}
+
+@keyframes slideIn {
+  0% {
+    bottom: -10px;
+    opacity: 0%;
+  }
+
+  30% {
+    bottom: 10px;
+    opacity: 40%;
+  }
+
+  80% {
+    opacity: 40%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}

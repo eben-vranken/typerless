@@ -1,0 +1,45 @@
+.practice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+}
+
+.practice-text {
+  max-width: 80ch;
+}
+.practice-text span {
+  color: var(--text-secondary);
+  font-size: 24px;
+  user-select: none;
+}
+
+.practice .practice-input {
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  cursor: default;
+  background: none;
+  border: none;
+  position: absolute;
+  color: rgba(241, 236, 206, 0%);
+  outline: none;
+  font-size: 1px;
+}
+
+.practice-text span.correct {
+  color: var(--text-correct);
+}
+.practice-text span.incorrect {
+  color: var(--text-incorrect);
+}
+
+.practice-text span.current:not(:first-child) {
+  box-shadow: inset 2px 0px var(--text-secondary);
+}
+.practice-text .space {
+  border-bottom: 2px solid var(--text-incorrect);
+}

@@ -1,0 +1,109 @@
+.navbar {
+  width: 60%;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 0;
+  position: fixed;
+  z-index: 2;
+  background-color: var(--body);
+}
+
+.nav-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+}
+
+.nav-items {
+  list-style-type: none;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: color 250ms;
+}
+
+.nav-item a:hover {
+  color: var(--text-secondary);
+}
+
+.nav-btn {
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-btn span {
+  width: 25px;
+  height: 2px;
+  background-color: var(--text-main);
+  display: flex;
+  transition: 0.3s;
+  margin: 3px;
+}
+
+.nav-btn.open span {
+  margin: -1px;
+}
+
+.nav-btn.open span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+.nav-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-btn.open span:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .nav-btn {
+    display: flex;
+  }
+
+  .nav-items {
+    background-color: var(--body);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    opacity: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 250ms;
+  }
+
+  .nav-items .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-items.open {
+    opacity: 100%;
+    z-index: 2;
+    pointer-events: visible;
+  }
+}
