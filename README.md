@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# typer
+----------------------------
+
+💻 Typer is a WebApplication written in TypeScript,
+
+where you can practice ⌨ your typing speed using randomly generated quotes and learn more
+about your typing behavior.
+
+----------------------------
+
+🌐 https://eben-vranken.github.io/typer/
+
+----------------------------
+
+⚡ Typer is powered by QuotableAPI - Check them out here: https://github.com/lukePeavey/quotable
+
+📝 Contact me on my linkedin: linkedin.com/in/eben-vranken-66b053224/
+>>>>>>> fc857719369fd21f14ca8a56e19522cc3bce186b
