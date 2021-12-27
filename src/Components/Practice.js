@@ -4,7 +4,7 @@ import Loader from "./Loader";
 import Snackbar from "./Snackbar";
 
 const Practice = () => {
-  const apiUrl = "http://api.quotable.io/random";
+  const apiUrl = "https://api.quotable.io/random";
 
   // Fetch data
   const [data, setData] = useState(null);

@@ -17,7 +17,7 @@ const Navbar = () => {
         <li className="nav-item ">
           <NavLink
             tag={Link}
-            to="/"
+            to="/typerless"
             onClick={handleNavToggle}
             exact
             activeStyle={{ borderBottom: "2px solid var(--text-secondary)" }}

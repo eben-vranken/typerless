@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/typerless">
             <Practice />
           </Route>
           <Route path="/statistics">
