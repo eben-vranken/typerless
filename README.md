@@ -11,6 +11,6 @@ about your typing behavior.
 
 ----------------------------
 
-⚡ Typer is powered by QuotableAPI - Check them out here: https://github.com/lukePeavey/quotable
+⚡ Typerless is powered by QuotableAPI - Check them out here: https://github.com/lukePeavey/quotable
 
 📝 Contact me on my linkedin: linkedin.com/in/eben-vranken-66b053224/
