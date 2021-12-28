@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Stylings/Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faKeyboard } from "@fortawesome/free-regular-svg-icons";
 
 import { NavLink, Link } from "react-router-dom";
 
@@ -12,7 +14,10 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <p className="nav-brand">Typerless</p>
+      <p className="nav-brand">
+        <FontAwesomeIcon icon={faKeyboard} />
+        Typerless
+      </p>
       <ul className={`nav-items ${navToggle}`}>
         <li className="nav-item ">
           <NavLink

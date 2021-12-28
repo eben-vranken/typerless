@@ -10,12 +10,17 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
+          <Route exact path="/">
+            <Practice />
+          </Route>
           <Route exact path="/typerless">
             <Practice />
           </Route>
-          <Route path="/statistics">
+
+          <Route exact path="/statistics">
             <Statistics />
           </Route>
+          <Route path="/*" component={Practice} />
         </Switch>
       </Router>
     </div>

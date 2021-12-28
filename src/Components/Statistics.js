@@ -28,15 +28,42 @@ const Statistics = () => {
     avgWpm: (totalWpm / count).toFixed(1),
     avgTime: (totalTime / count).toFixed(1),
     avgMistake: (totalMistake / count).toFixed(1),
+    description: "",
+
+    calculateWpmDescription: function () {
+      const wpm = Math.round(this.avgWpm);
+      switch (true) {
+        case wpm <= 19:
+          return `You type around one word every 6 seconds. Learn the poper typing technique and practice to improve your speed!`;
+        case wpm <= 29:
+          return `With your typing speed, you type about one word every 3 seconds, try to focus on your technique and keep practicing.`;
+        case wpm <= 39:
+          return `Your typing speed is below average. Keep practicing to improve your speed and accuracy!`;
+        case wpm <= 49:
+          return `At ${wpm}, you are now an average typist. You still have significant room from for improvement.`;
+        case wpm <= 59:
+          return `Congratulations, with an average typing speed of ${wpm}, you're above the global average!`;
+        case wpm <= 69:
+          return `Congratulations, you have the typing speed required for most jobs. You can now be a profesional typist.`;
+        case wpm <= 79:
+          return `You are way above average and would qualify for any typing job, assuming your accuracy is high enough.`;
+        case wpm <= 89:
+          return `You're a catch! Any employer looking for a typist would love to have you`;
+        case wpm <= 99:
+          return `At this speed, you're probably a gamer, coder, or genius. You're doing great!`;
+        default:
+          return `You are in the top 1% of typists! Congratulations`;
+      }
+    },
   };
 
+  averages.description = averages.calculateWpmDescription();
   data.sort((a, b) => b.id - a.id);
 
   return (
     <section className="statistics">
       {localStorage.length ? (
         <section className="average-container">
-          <p className="average-title">Average</p>
           <section className="average-stats">
             <section className="average average-wpm">
               <span className="wpm-title">wpm</span>
@@ -46,6 +73,7 @@ const Statistics = () => {
               <span>{averages.avgTime}s</span>
               <span className="mistakes">{averages.avgMistake}</span>
             </section>
+            <p className="description">{averages.description}</p>
           </section>
         </section>
       ) : (
@@ -73,4 +101,7 @@ const Statistics = () => {
   );
 };
 
+{
+  /* */
+}
 export default Statistics;

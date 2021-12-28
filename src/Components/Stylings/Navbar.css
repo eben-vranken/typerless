@@ -15,6 +15,10 @@
   font-size: 24px;
 }
 
+.nav-brand svg {
+  margin-right: 5px;
+}
+
 .nav-items {
   list-style-type: none;
   font-family: "Lato", sans-serif;

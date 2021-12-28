@@ -16,10 +16,17 @@
   align-items: center;
   flex-direction: column;
   border-bottom: 1px solid var(--text-secondary);
+  padding: 10px;
 }
 
-.average-title {
-  font-size: 35px;
+.average-container .description {
+  text-align: left;
+  border-left: 2px solid var(--text-secondary);
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  max-width: 30ch;
 }
 
 .average-stats {
