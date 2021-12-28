@@ -10,10 +10,12 @@
 .practice-text {
   max-width: 80ch;
 }
+
 .practice-text span {
   color: var(--text-secondary);
   font-size: 24px;
   user-select: none;
+  white-space: pre-wrap;
 }
 
 .practice .practice-input {
