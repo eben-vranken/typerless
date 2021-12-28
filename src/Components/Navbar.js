@@ -19,7 +19,6 @@ const Navbar = () => {
             tag={Link}
             to="/typerless"
             onClick={handleNavToggle}
-            exact
             activeStyle={{ borderBottom: "2px solid var(--text-secondary)" }}
           >
             Practice

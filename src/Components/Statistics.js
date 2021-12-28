@@ -30,26 +30,27 @@ const Statistics = () => {
     avgMistake: (totalMistake / count).toFixed(1),
   };
 
-  console.log(data);
-
   data.sort((a, b) => b.id - a.id);
-  console.log(data);
 
   return (
     <section className="statistics">
-      <section className="average-container">
-        <p className="average-title">Average</p>
-        <section className="average-stats">
-          <section className="average average-wpm">
-            <span className="wpm-title">wpm</span>
-            <span>{averages.avgWpm}</span>
-          </section>
-          <section className="average">
-            <span>{averages.avgTime}s</span>
-            <span className="mistakes">{averages.avgMistake}</span>
+      {localStorage.length ? (
+        <section className="average-container">
+          <p className="average-title">Average</p>
+          <section className="average-stats">
+            <section className="average average-wpm">
+              <span className="wpm-title">wpm</span>
+              <span>{averages.avgWpm}</span>
+            </section>
+            <section className="average">
+              <span>{averages.avgTime}s</span>
+              <span className="mistakes">{averages.avgMistake}</span>
+            </section>
           </section>
         </section>
-      </section>
+      ) : (
+        <p>No statistics to be shown! Practice at least once!</p>
+      )}
       <table className="statistics-list">
         <tbody>
           {data.map((item, i) => {
