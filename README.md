@@ -1,8 +1,6 @@
 ----------------------------
 
-💻 Typerless is a WebApplication made in React,
-
-where you can practice ⌨ your typing speed using randomly generated quotes and learn more
+💻 Typerless is a WebApplication made in React,where you can practice ⌨ your typing speed using randomly generated quotes and learn more
 about your typing behavior.
 
 ----------------------------
