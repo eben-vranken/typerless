@@ -17,7 +17,7 @@
   font-family: "Montserrat";
 
   background-color: var(--text-secondary);
-  opacity: 40%;
+  opacity: 60%;
 }
 
 .snackbar span:nth-child(-n + 3) {
@@ -29,7 +29,7 @@
 }
 
 #show {
-  animation: slideIn 3s;
+  animation: slideIn 5s;
 }
 
 @keyframes slideIn {
@@ -40,11 +40,11 @@
 
   30% {
     bottom: 10px;
-    opacity: 40%;
+    opacity: 60%;
   }
 
   80% {
-    opacity: 40%;
+    opacity: 60%;
   }
 
   100% {
