@@ -20,7 +20,6 @@ function App() {
           <Route exact path="/statistics">
             <Statistics />
           </Route>
-          <Route path="/*" component={Practice} />
         </Switch>
       </Router>
     </div>
