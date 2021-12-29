@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/typerless/static/css/main.8f27f117.css",
-    "main.js": "/typerless/static/js/main.169c9f31.js",
+    "main.js": "/typerless/static/js/main.a7d1e3a6.js",
     "static/js/787.ca760cab.chunk.js": "/typerless/static/js/787.ca760cab.chunk.js",
     "index.html": "/typerless/index.html",
     "main.8f27f117.css.map": "/typerless/static/css/main.8f27f117.css.map",
-    "main.169c9f31.js.map": "/typerless/static/js/main.169c9f31.js.map",
+    "main.a7d1e3a6.js.map": "/typerless/static/js/main.a7d1e3a6.js.map",
     "787.ca760cab.chunk.js.map": "/typerless/static/js/787.ca760cab.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8f27f117.css",
-    "static/js/main.169c9f31.js"
+    "static/js/main.a7d1e3a6.js"
   ]
 }
