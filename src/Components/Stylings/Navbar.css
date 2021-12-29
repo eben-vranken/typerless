@@ -11,8 +11,8 @@
 }
 
 .nav-brand {
-  font-family: "Montserrat", sans-serif;
-  font-size: 24px;
+  font-family: "Inconsolata", monospace;
+  font-size: 30px;
 }
 
 .nav-brand svg {
@@ -20,8 +20,8 @@
 }
 
 .nav-items {
+  font-family: "Inconsolata", monospace;
   list-style-type: none;
-  font-family: "Lato", sans-serif;
   font-size: 18px;
   display: flex;
   align-items: center;

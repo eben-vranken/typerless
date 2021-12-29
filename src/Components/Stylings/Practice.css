@@ -23,19 +23,20 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: "Lato", sans-serif;
+  font-family: "Inconsolata", monospace;
 }
 
 .practice-text {
-  max-width: 80ch;
+  max-width: 120ch;
   margin: 50px 0;
   padding: 10px;
 }
 .practice-text span {
   color: var(--text-secondary);
-  font-size: 24px;
+  font-size: 27px;
   user-select: none;
   white-space: pre-wrap;
+  word-spacing: -5px;
 }
 
 .practice .practice-input {
