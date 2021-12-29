@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
 import "./Stylings/Practice.css";
 import Loader from "./Loader";
 import Snackbar from "./Snackbar";
@@ -53,7 +54,6 @@ const Practice = () => {
   // On finish
   const handleFinish = (reset) => {
     setState({ ...state, finished: true });
-
     if (!reset) {
       const time = (
         (new Date().getTime() - state.time.getTime()) /
@@ -157,8 +157,7 @@ const Practice = () => {
         <p>
           Press <span>TAB</span> to reset question.
         </p>
-        <p>Timing only starts once you type.</p>
-        <p>Complete 100% to pass.</p>
+        <small>Timing only starts once you type. Complete 100% to pass.</small>
       </section>
       <section className="practice-text">
         {/* While pending, set the loader */}
