@@ -194,9 +194,7 @@ const Practice = () => {
         ref={snackbarRef}
         data={
           localStorage.getItem("practice-stats") &&
-          JSON.parse(localStorage.getItem("practice-stats"))[
-            JSON.parse(localStorage.getItem("practice-stats")).length - 1
-          ]
+          JSON.parse(localStorage.getItem("practice-stats"))[0]
         }
       />
     </section>
