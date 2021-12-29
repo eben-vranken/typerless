@@ -157,6 +157,7 @@ const Practice = () => {
         <p>
           Press <span>TAB</span> to reset question.
         </p>
+        <p>Timing only starts once you type.</p>
         <p>Complete 100% to pass.</p>
       </section>
       <section className="practice-text">
