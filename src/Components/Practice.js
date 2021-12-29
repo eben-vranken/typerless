@@ -182,7 +182,6 @@ const Practice = () => {
               </span>
             );
           })}
-        );
       </section>
       <Snackbar
         ref={snackbarRef}

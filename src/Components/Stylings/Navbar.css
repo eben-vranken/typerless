@@ -39,14 +39,7 @@
   transition: color 250ms;
 }
 
-.nav-item.icon {
-  color: var(--text-main);
-  margin-left: 30px;
-  transition: color 250ms;
-}
-
-.nav-item a:hover,
-.nav-item.icon:hover {
+.nav-item a:hover {
   color: var(--text-secondary);
   cursor: pointer;
 }
