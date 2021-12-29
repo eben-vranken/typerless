@@ -1,15 +1,8 @@
+import StatisticsChart from "./StatisticsChart";
 import "./Stylings/Statistics.css";
-import { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
 
 const Statistics = () => {
-  let data = [],
-    keys = Object.keys(localStorage),
-    i = keys.length;
-
-  while (i--) {
-    data.push(JSON.parse(localStorage.getItem(keys[i])));
-  }
+  let data = JSON.parse(localStorage.getItem("practice-stats")) || [];
 
   // Calculate averages
   let count, totalWpm, totalTime, totalMistake;
@@ -62,23 +55,29 @@ const Statistics = () => {
 
   return (
     <section className="statistics">
-      {localStorage.length ? (
-        <section className="average-container">
-          <section className="average-stats">
-            <section className="average average-wpm">
-              <span className="wpm-title">wpm</span>
-              <span>{averages.avgWpm}</span>
+      {localStorage.getItem("practice-stats") ? (
+        <>
+          <section className="average-container">
+            <section className="average-stats">
+              <section className="average average-wpm">
+                <span className="wpm-title">wpm</span>
+                <span>{averages.avgWpm}</span>
+              </section>
+              <section className="average">
+                <span>{averages.avgTime}s</span>
+                <span className="mistakes">{averages.avgMistake}</span>
+              </section>
+              <p className="description">{averages.description}</p>
             </section>
-            <section className="average">
-              <span>{averages.avgTime}s</span>
-              <span className="mistakes">{averages.avgMistake}</span>
-            </section>
-            <p className="description">{averages.description}</p>
           </section>
-        </section>
+          <StatisticsChart data={"wpm"} color={"#0c7c59"} text={"wpm"} />
+          <StatisticsChart data={"time"} text={"s"} />
+          <StatisticsChart data={"mistakes"} color={"#d64933"} />
+        </>
       ) : (
         <p>No statistics to be shown! Practice at least once!</p>
       )}
+
       <table className="statistics-list">
         <tbody>
           {data.map((item, i) => {

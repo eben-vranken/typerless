@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Lato", sans-serif;
+  font-family: "Inconsolata", monospace;
   color: var(--text-main);
   position: absolute;
   top: 15%;
@@ -57,6 +57,10 @@
   padding: 10px;
 }
 
+.statistics-list:first-child {
+  border-top: 1px solid var(--text-secondary);
+}
+
 .statistics-item {
   padding: 25px;
   border-bottom: 1px solid var(--text-secondary);
@@ -67,7 +71,7 @@
 }
 
 .statistics-item .date {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inconsolata", monospace;
   color: var(--text-correct);
   font-size: 20px;
 }
@@ -78,7 +82,7 @@
 }
 
 .statistics-item .mistakes > span {
-  font-family: "Lato", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-weight: 400;
 }
 

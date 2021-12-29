@@ -18,12 +18,16 @@ const Snackbar = forwardRef(({ data }, ref) => {
         setToggleSnackbar(false);
       }}
     >
-      <span>wpm</span>
-      <span>time</span>
-      <span>typos</span>
-      <span>{data.wpm}</span>
-      <span>{data.time}s</span>
-      <span>{data.mistakes}</span>
+      {localStorage.getItem("practice-stats") && (
+        <>
+          <span>wpm</span>
+          <span>time</span>
+          <span>typos</span>
+          <span>{data.wpm}</span>
+          <span>{data.time}s</span>
+          <span>{data.mistakes}</span>
+        </>
+      )}
     </section>
   );
 });

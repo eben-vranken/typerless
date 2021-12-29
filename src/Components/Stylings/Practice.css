@@ -12,7 +12,7 @@
 .information span {
   padding: 3px 10px;
   border: 2px solid var(--text-secondary);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inconsolata", monospace;
   font-size: 18px !important;
   margin: auto 0.5ch;
 }
@@ -36,7 +36,7 @@
   font-size: 27px;
   user-select: none;
   white-space: pre-wrap;
-  word-spacing: -5px;
+  word-spacing: -7px;
 }
 
 .practice .practice-input {

@@ -61,16 +61,23 @@ const Practice = () => {
       ).toFixed(1);
       const wpm = (state.text.split(" ").length / (time / 60)).toFixed(1);
 
-      localStorage.setItem(
-        `${localStorage.length}`,
-        JSON.stringify({
-          time: time,
-          wpm: wpm,
-          mistakes: state.mistakes,
-          date: new Date().toLocaleDateString(),
-          id: localStorage.length,
-        })
-      );
+      const obj = {
+        time: time,
+        wpm: wpm,
+        mistakes: state.mistakes,
+        date: new Date().toLocaleDateString(),
+        id: localStorage.length,
+      };
+
+      if (localStorage.getItem("practice-stats") === null) {
+        var arr = [obj];
+      } else {
+        var arr = JSON.parse(localStorage.getItem("practice-stats"));
+        arr.splice(0, 0, obj);
+        if (arr.length > 1000) arr.pop();
+      }
+
+      localStorage.setItem("practice-stats", JSON.stringify(arr));
 
       snackbarRef.current.show();
     }
@@ -186,8 +193,10 @@ const Practice = () => {
       <Snackbar
         ref={snackbarRef}
         data={
-          localStorage.length &&
-          JSON.parse(localStorage.getItem(localStorage.length - 1))
+          localStorage.getItem("practice-stats") &&
+          JSON.parse(localStorage.getItem("practice-stats"))[
+            JSON.parse(localStorage.getItem("practice-stats")).length - 1
+          ]
         }
       />
     </section>
