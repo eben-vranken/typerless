@@ -1,3 +1,22 @@
+.information {
+  font-size: 18px;
+  color: var(--text-secondary);
+
+  animation: hide 5s forwards;
+}
+
+.information p {
+  margin: 10px;
+}
+
+.information span {
+  padding: 3px 10px;
+  border: 2px solid var(--text-secondary);
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px !important;
+  margin: auto 0.5ch;
+}
+
 .practice {
   display: flex;
   flex-direction: column;
@@ -9,8 +28,9 @@
 
 .practice-text {
   max-width: 80ch;
+  margin: 50px 0;
+  padding: 10px;
 }
-
 .practice-text span {
   color: var(--text-secondary);
   font-size: 24px;
@@ -44,4 +64,18 @@
 }
 .practice-text .space {
   border-bottom: 2px solid var(--text-incorrect);
+}
+
+@keyframes hide {
+  0% {
+    opacity: 100%;
+  }
+
+  80% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
 }

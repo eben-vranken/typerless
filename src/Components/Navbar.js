@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./Stylings/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faKeyboard } from "@fortawesome/free-regular-svg-icons";
+import { faKeyboard, faMoon } from "@fortawesome/free-regular-svg-icons";
 
 import { NavLink, Link } from "react-router-dom";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [navToggle, setNavToggle] = useState("closed");

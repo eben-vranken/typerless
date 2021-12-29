@@ -23,11 +23,14 @@
   list-style-type: none;
   font-family: "Lato", sans-serif;
   font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-item {
   display: inline-block;
   margin-left: 50px;
+  font-weight: 500;
 }
 
 .nav-item a {
@@ -36,8 +39,16 @@
   transition: color 250ms;
 }
 
-.nav-item a:hover {
+.nav-item.icon {
+  color: var(--text-main);
+  margin-left: 30px;
+  transition: color 250ms;
+}
+
+.nav-item a:hover,
+.nav-item.icon:hover {
   color: var(--text-secondary);
+  cursor: pointer;
 }
 
 .nav-btn {

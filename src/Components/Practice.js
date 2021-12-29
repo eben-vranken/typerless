@@ -51,26 +51,29 @@ const Practice = () => {
   let [state, setState] = useState(initialState);
 
   // On finish
-  const handleFinish = () => {
+  const handleFinish = (reset) => {
     setState({ ...state, finished: true });
 
-    const time = ((new Date().getTime() - state.time.getTime()) / 1000).toFixed(
-      1
-    );
-    const wpm = (state.text.split(" ").length / (time / 60)).toFixed(1);
+    if (!reset) {
+      const time = (
+        (new Date().getTime() - state.time.getTime()) /
+        1000
+      ).toFixed(1);
+      const wpm = (state.text.split(" ").length / (time / 60)).toFixed(1);
 
-    localStorage.setItem(
-      `${localStorage.length}`,
-      JSON.stringify({
-        time: time,
-        wpm: wpm,
-        mistakes: state.mistakes,
-        date: new Date().toLocaleDateString(),
-        id: localStorage.length,
-      })
-    );
+      localStorage.setItem(
+        `${localStorage.length}`,
+        JSON.stringify({
+          time: time,
+          wpm: wpm,
+          mistakes: state.mistakes,
+          date: new Date().toLocaleDateString(),
+          id: localStorage.length,
+        })
+      );
 
-    snackbarRef.current.show();
+      snackbarRef.current.show();
+    }
 
     state = initialState;
     {
@@ -95,7 +98,7 @@ const Practice = () => {
       } else {
         state.currentWrong = false;
       }
-      if (state.text === state.userInput) handleFinish();
+      if (state.text === state.userInput) handleFinish(false);
     }
   }, [state]);
 
@@ -125,6 +128,12 @@ const Practice = () => {
       "ArrowRight",
     ];
     if (illegalCharacters.includes(e.key)) e.preventDefault();
+
+    if (e.key == "Tab") {
+      e.preventDefault();
+      e.stopPropagation();
+      handleFinish(true);
+    }
   };
 
   return (
@@ -144,6 +153,12 @@ const Practice = () => {
         maxLength={state.text.length}
         value={state.userInput}
       />
+      <section className="information">
+        <p>
+          Press <span>TAB</span> to reset question.
+        </p>
+        <p>Complete 100% to pass.</p>
+      </section>
       <section className="practice-text">
         {/* While pending, set the loader */}
         {isPending && <Loader />}
@@ -167,6 +182,7 @@ const Practice = () => {
               </span>
             );
           })}
+        );
       </section>
       <Snackbar
         ref={snackbarRef}
