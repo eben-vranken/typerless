@@ -23,7 +23,7 @@ const Practice = () => {
         return res.json();
       })
       .then((data) => {
-        data.content = data.content.replace("’", "'");
+        data.content = data.content.replaceAll("’", "'");
         setState({ ...state, text: data.content });
         setIsPending(false);
       })
