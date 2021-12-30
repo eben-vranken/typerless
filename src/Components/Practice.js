@@ -74,7 +74,7 @@ const Practice = () => {
       } else {
         var arr = JSON.parse(localStorage.getItem("practice-stats"));
         arr.splice(0, 0, obj);
-        if (arr.length > 1000) arr.pop();
+        if (arr.length > 100) arr.pop();
       }
 
       localStorage.setItem("practice-stats", JSON.stringify(arr));

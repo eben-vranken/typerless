@@ -71,8 +71,11 @@ const Statistics = () => {
             </section>
           </section>
           <StatisticsChart data={"wpm"} color={"#0c7c59"} text={"wpm"} />
-          <StatisticsChart data={"time"} text={"s"} />
-          <StatisticsChart data={"mistakes"} color={"#d64933"} />
+          <StatisticsChart
+            data={"mistakes"}
+            color={"#d64933"}
+            text={"mistakes"}
+          />
         </>
       ) : (
         <p>No statistics to be shown! Practice at least once!</p>

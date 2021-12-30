@@ -63,7 +63,7 @@ const StatisticsChart = ({ data, text, color }) => {
               beginAtZero: true,
               ticks: {
                 callback: function (value) {
-                  return `${value} wpm`;
+                  return `${value} ${text}`;
                 },
               },
             },
