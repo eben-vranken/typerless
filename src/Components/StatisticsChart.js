@@ -22,7 +22,8 @@ ChartJS.register(
   Legend
 );
 
-const StatisticsChart = ({ data, text, color }) => {
+const StatisticsChart = ({ dataset }) => {
+  console.log(typeof dataset);
   return (
     <section className="chart">
       <Line
@@ -37,11 +38,20 @@ const StatisticsChart = ({ data, text, color }) => {
             {
               data: JSON.parse(localStorage.getItem("practice-stats"))
                 .map((item) => {
-                  return item[data];
+                  return item["wpm"];
                 })
                 .reverse(),
               borderWidth: 2,
-              borderColor: color || "#fff",
+              borderColor: "#0c7c59",
+            },
+            {
+              data: JSON.parse(localStorage.getItem("practice-stats"))
+                .map((item) => {
+                  return item["mistakes"];
+                })
+                .reverse(),
+              borderWidth: 2,
+              borderColor: "#d64933",
             },
           ],
         }}
@@ -61,11 +71,6 @@ const StatisticsChart = ({ data, text, color }) => {
             },
             y: {
               beginAtZero: true,
-              ticks: {
-                callback: function (value) {
-                  return `${value} ${text}`;
-                },
-              },
             },
           },
         }}

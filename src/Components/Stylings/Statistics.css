@@ -57,7 +57,7 @@
   padding: 10px;
 }
 
-.statistics-list:first-child {
+tbody > :first-child {
   border-top: 1px solid var(--text-secondary);
 }
 

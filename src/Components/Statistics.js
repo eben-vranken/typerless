@@ -70,11 +70,11 @@ const Statistics = () => {
               <p className="description">{averages.description}</p>
             </section>
           </section>
-          <StatisticsChart data={"wpm"} color={"#0c7c59"} text={"wpm"} />
           <StatisticsChart
-            data={"mistakes"}
-            color={"#d64933"}
-            text={"mistakes"}
+            dataset={[
+              { data: "wpm", color: "#0c7c59" },
+              { data: "mistakes", color: "#d64933" },
+            ]}
           />
         </>
       ) : (
